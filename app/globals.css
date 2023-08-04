@@ -97,6 +97,75 @@ body {
 }
 /* Footer */
 
+/* Biography Container */
+.biographyContainer{
+
+}
+/* Biography Container */
+
+
+
+
+/* Courses Container */
+.coursesContainer{
+
+}
+/* Courses Container */
+
+
+
+
+/* Home Container */
+.homeContainer{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+height: 100%;
+gap: 1em;
+}
+.homeLogo{
+  background: url(./components/images/logo.png);
+  background-size: cover;
+  background-position: center;
+  width: 128px;
+  height: 128px;
+}
+.homeBtn{
+  background-color: #151515;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  box-shadow: none;
+  font-size: 24px;
+  border-radius: 0.3em;
+  padding: 0.2em 1em 0.2em 1em;
+  transition:0.4s;
+}
+.homeBtn:active{
+  box-shadow: inset 0em 0em 1em 1em white;
+  color: #151515;
+  transition:0.4s;
+}
+/* Home Container */
+
+
+
+
+/* Shop Container */
+.shopContainer{
+
+}
+/* Shop Container */
+
+
+
+
+/* Cart Container */
+.cartcontainer{
+
+}
+/* Cart Container */
 
 
 /* Media 1200 */
@@ -137,7 +206,26 @@ font-size: 18px;
   .footerMediaLinks{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
+    height: 100%;
+  }
+  .footerMediaLinks a{
+    color: white;
+  }
+  .footerMediaLink{
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+    transition: 0.3s;
+  cursor: pointer;
+}
+  .footerMediaLink:hover{
+    transition: 0.3s;
+  }
+
+  .borderLinkActive{
+    border-bottom: 1px solid white;
+    font-size: 32px !important;
   }
 /* Footer Media 768 */
 
