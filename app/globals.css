@@ -207,10 +207,10 @@ font-size: 18px;
 
 
   /* Footer Media 768 */
-  .footerContainer{
-    position: relative;
-    bottom: 2em;
-  }
+.footerContainer{
+  position: fixed;
+  bottom: 0;
+}
   .footerContainer p{
     display: none;
   }
