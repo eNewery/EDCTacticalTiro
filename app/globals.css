@@ -1,0 +1,148 @@
+/* Keyframes */
+
+/* Keyframes */
+
+/* RESET CSS */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+
+}
+/* RESET CSS */
+
+/* Html, Body */
+html,
+body {
+  animation: start 2s both;
+  height: 100vh;
+}
+/* Html, Body */
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em 0 1em;
+}
+/* Container */
+
+/* Header */
+.headerContainer {
+  background-color: #151515;
+  width: 100%;
+  height: 80px;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.headerLogoContainer {
+  display: flex;
+  width: 100%;
+}
+.headerLogo {
+  background: url(./components/images/logo.png);
+  background-position: center;
+  background-size: cover;
+  width: 64px;
+  height: 64px;
+}
+.headerNavLinks {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1em;
+}
+.headerNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.headerNav a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+.headerCart {
+  background: url(./components/images/cart.png);
+  background-position: center;
+  background-size: cover;
+  width: 48px;
+  height: 48px;
+}
+/* Header */
+
+/* Footer */
+.footerContainer {
+  background-color: #151515;
+  color: white;
+  width: 100%;
+  height: 70px;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.footerMediaLinks{
+  display: none;
+}
+/* Footer */
+
+
+
+/* Media 1200 */
+@media (max-width:1200px) {
+
+  
+
+/* Footer Media 1200 */
+.footerContainer{
+font-size: 18px;
+}
+/* Footer Media 1200 */
+
+
+
+
+}
+/* Media 1200 */
+
+
+
+
+
+/* Media 768 */
+@media (max-width:768px) {
+
+  /* Header Media 768 */
+.headerContainer{
+  display: none;
+}
+  /* Header Media 768 */
+
+
+  /* Footer Media 768 */
+  .footerContainer p{
+    display: none;
+  }
+  .footerMediaLinks{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+/* Footer Media 768 */
+
+
+
+
+}
+/* Media 768 */
