@@ -1,5 +1,6 @@
 import Footer from './components/Footer'
 import Header from './components/Header'
+import { MiContextoProvider } from './components/context'
 import './globals.css'
 
 
@@ -15,8 +16,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
- 
+ <MiContextoProvider>
       <body className='container'><Header/>{children}<Footer/></body>
+  </MiContextoProvider>
     </html>
   )
 }

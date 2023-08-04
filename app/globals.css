@@ -17,7 +17,6 @@
 html,
 body {
   animation: start 2s both;
-  height: 100vh;
 }
 /* Html, Body */
 
@@ -28,6 +27,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 1em 0 1em;
+  min-height: 100vh;
 }
 /* Container */
 
@@ -98,9 +98,61 @@ body {
 /* Footer */
 
 /* Biography Container */
-.biographyContainer{
-
-}
+  .biographyContainer {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .header {
+    display: grid;
+    grid-gap: 10px;
+    text-align: center;
+  }
+  
+  .bio,
+  .experience,
+  .contact {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 1em 0.2em #151515;
+    background-color: #151515;
+  }
+  .contact{
+    gap: 1em;
+    }
+  .rrss{
+    display: flex;
+    gap: 1em;
+  }
+  .instagram{
+    background:url(./components/images/instagram.png);
+    background-size: cover;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+  }
+  .facebook{
+    background:url(./components/images/facebook.png);
+    background-size: cover;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+  }
+  .whatsapp{
+    background:url(./components/images/whatsapp.png);
+    background-size: cover;
+    background-position: center;
+    width: 32px;
+    height: 32px;
+  }
 /* Biography Container */
 
 
@@ -121,31 +173,32 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-direction: column;
-height: 80%;
-gap: 1em;
+gap: 2em;
 }
 .homeLogo{
   background: url(./components/images/logo.png);
   background-size: cover;
   background-position: center;
-  width: 128px;
-  height: 128px;
+  width: 256px;
+  height: 256px;
 }
 .homeBtn{
   background-color: #151515;
   color: white;
   border: none;
-  text-transform: uppercase;
   box-shadow: none;
   font-size: 24px;
   border-radius: 0.3em;
-  padding: 0.2em 1em 0.2em 1em;
+width: 200px;
+height: 45px;  
   transition:0.4s;
+cursor: pointer;
 }
 .homeBtn:active{
-  box-shadow: inset 0em 0em 1em 1em white;
+  box-shadow: inset 0em -2em 5em 1em white;
   color: #151515;
   transition:0.4s;
+  transform: translateY(-0.3em) scale(1.1);
 }
 /* Home Container */
 
@@ -179,7 +232,15 @@ font-size: 18px;
 }
 /* Footer Media 1200 */
 
-
+/* Home Media 1200 */
+.homeLogo{
+width: 200px;
+height: 200px;
+}
+.headerNav{
+  gap: 2em;
+}
+/* Home Media 1200 */
 
 
 }
@@ -192,11 +253,12 @@ font-size: 18px;
 /* Media 768 */
 @media (max-width:768px) {
 
-/* Container Media 768 */
+  /* Container Media 768 */
 .container{
-  overflow: hidden;
+  justify-content: center;
 }
-/* Container Media 768 */
+  /* Container Media 768 */
+
 
 
   /* Header Media 768 */
@@ -240,8 +302,31 @@ border-top-right-radius: 50%;
   }
 /* Footer Media 768 */
 
+/* Home Media 768 */
+.homeContainer{
+  }
+  .homeLogo{
+    width: 128px;
+    height: 128px;
+  }
+  .homeBtn{
+    font-size: 24px;
+    padding: 0.2em 1em 0.2em 1em;
+    width: 156px;
+    height: 45px;
+  }
 
-
-
+  /* Home Media 768 */
+  
+  
+  
+  /* Biography Media 768 */
+  .biographyContainer{
+    margin-bottom: 5em;
+  }
+  /* Biography Media 768 */
 }
+
+
+
 /* Media 768 */
