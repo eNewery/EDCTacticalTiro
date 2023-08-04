@@ -192,6 +192,13 @@ font-size: 18px;
 /* Media 768 */
 @media (max-width:768px) {
 
+/* Container Media 768 */
+.container{
+  overflow: hidden;
+}
+/* Container Media 768 */
+
+
   /* Header Media 768 */
 .headerContainer{
   display: none;
@@ -200,6 +207,10 @@ font-size: 18px;
 
 
   /* Footer Media 768 */
+  .footerContainer{
+    position: relative;
+    bottom: 2em;
+  }
   .footerContainer p{
     display: none;
   }
