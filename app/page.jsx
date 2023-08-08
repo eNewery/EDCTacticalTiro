@@ -10,6 +10,7 @@ export default function Home() {
 
   return (
     <main className='homeContainer'>
+      <h1 className='homeTitle'>EDC Tactical</h1>
       <div className="homeLogo"></div>
       <Link href="/Biography">
       <button onClick={() => context.setClickedLink("biography")} className='homeBtn'>Ver más</button>

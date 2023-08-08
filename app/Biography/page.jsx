@@ -5,31 +5,28 @@ const Biography = () => {
     <div className="biographyContainer">
       <div className="header">
         <h1>Nicolas Rizzo</h1>
-        <p>Fecha de nacimiento: DD/MM/AAAA</p>
+        <p>Instructor Habilitado ANMaC</p>
       </div>
       <div className="bio">
-        <h2>Biografía</h2>
+        <h2>EDC Tactical</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nihil maxime eligendi molestiae molestias porro, quaerat vitae fugiat iure perspiciatis eveniet ipsum, hic magni fuga error, quas sapiente quo voluptas.
-          Molestiae quo nam necessitatibus similique qui quasi accusantium, aliquid fuga iste cupiditate deserunt, voluptatibus ipsam, fugiat perspiciatis maiores eos aliquam eius quod sequi odit asperiores dolores. Reprehenderit odio aliquid cupiditate?
-          Aut excepturi repellat impedit labore amet illo dolor consequatur ullam, natus quas soluta hic ut nemo quo praesentium aliquam deleniti voluptates magnam a fuga non, nostrum quis. Ut, accusantium modi?
+        El ideal del espacio de formación de EDC Tactical es la interacción gradual pero constante en el acercamiento a las armas de fuego en su totalidad, es por eso que desde el inicio se brindan las horas de teoría necesarias y acordes al nivel del usuario para alcanzar los contenidos necesarios y poder realizar las prácticas en polígonos de forma segura. En este sentido, que cada uno de los marcos teóricos se brindan a grupos reducidos para evaluar y asegurar que el tirador está realmente preparado para enfrentar la posición, las medidas de seguridad, el comportamiento y las reglamentaciones establecidas por ANMaC las cuales son fundamentales para la seguridad de todos, considerando que los usuarios aspiran a tener armas de fuego en los domicilios. Los tiradores son evaluados durante la formación fundamentalmente en el contenido teórico en medidas de seguridad con prácticas en seco, simuladores laser y finalmente practica con tiro vivo en el polígono.
+Es importante comprender que los usuarios que se están formando en Idoneidad estarán incorporando un nuevo lenguaje que también es parte de su formación y serán evaluados de manera estricta para que al momento de iniciar su práctica en Polígonos conozcan las llamadas de alerta y términos clave que utilizamos los Instructores y/o Comisarios del Polígono para detener todo tipo de práctica riesgosa que se esté realizando y como accionar. 
+Para la Escuela EDC Tatical MDQ es primordial la seguridad y la integridad en la información que se brinda en la totalidad del desarrollo del entrenamiento. 
+El desarrollo de las mismas se brinda con material teórico, videos, imágenes y material de practica como cuadernillo, armas inertes, material de seguridad, etc
         </p>
       </div>
       <div className="experience">
-        <h2>Experiencia</h2>
+        <h2>Nuestro Objetivo</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, in cum molestias laudantium adipisci doloribus natus quaerat voluptates dolores. Quisquam, voluptates suscipit asperiores non provident modi quasi assumenda placeat. Quod.
-          Dolor dicta dolores numquam reprehenderit, qui harum ullam iusto error incidunt beatae a aut sapiente velit, minus deleniti ex saepe quia quo. Nisi perferendis voluptatibus molestias, consectetur inventore assumenda hic!
-          Error harum cupiditate cumque, eaque pariatur expedita quas laborum maxime blanditiis veritatis. Molestiae omnis laboriosam enim quis mollitia quae ipsa iusto, perferendis dicta in. Ipsam sequi aliquid enim praesentium blanditiis!
+        El objetivo principal de estos cursos es dar a los participantes las herramientas necesarias para el uso adecuado y seguro al momento de empuñar un arma de fuego, fomentando por supuesto, el continuo entrenamiento para lograr el rendimiento, adquirir habilidades técnicas, fortalecer la disciplina y determinación y potenciar la seguridad de los tiradores en general.
         </p>
       </div>
      
       <div className="contact">
         <div>
         <h2>Contacto</h2>
-        <p>Correo: correo@example.com</p>
-        <p>Teléfono: (123) 456-7890</p>
-        <p>Dirección: </p>
+        <p>Teléfono: +54 9 2234 56-4340</p>
         </div>
         <div className="rrss">
             <a target='_blank' href="https://www.instagram.com/edctacticalmdp/">
