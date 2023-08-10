@@ -1,3 +1,9 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+/* Imports */
+
+
+
 /* Keyframes */
 @keyframes headerAppear {
   0% {
@@ -39,7 +45,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 100;
 }
 /* RESET CSS */
@@ -123,7 +129,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 24px;
+  font-size: 16px;
   animation: footerAppear 1s both;
   animation-delay: 1s;
 }
@@ -136,15 +142,21 @@ body {
 .biographyContainer {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr 1fr 1fr;
-  grid-gap: 20px;
+gap: 2em;
   padding: 20px;
   color: white;
+  grid-template-columns: 700px;
 }
 .header {
-  display: grid;
-  grid-gap: 10px;
   text-align: center;
+  color: white;
+  background-color: #151515;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agregamos un sombreado al texto */
 }
 
 .bio,
@@ -159,6 +171,15 @@ body {
   text-align: center;
   box-shadow: 0 0 1em 0.2em #151515;
   background-color: #151515;
+}
+.bio h2, .experience h2, .contact h2{
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #151515;
+transition:0.3s;
+}
+.bio h2:hover, .experience h2:hover, .contact h2:hover{
+  border-bottom: 1px solid white;
+  transition:0.3s;
 }
 .contact {
   gap: 1em;
@@ -202,7 +223,15 @@ body {
 .coursesTitle {
   text-align: center;
   color: white;
+  font-size: 36px; 
   margin-bottom: 1em;
+  background-color: #151515;
+  width: 300px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
 }
 .course {
   padding: 1em;
@@ -344,8 +373,51 @@ body {
 }
 /* Coming Soon... */
 
+/* Auth */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: #151515;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.input-container {
+  margin-bottom: 15px;
+}
 
+.label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Auth */
 /* Media 1200 */
 @media (max-width: 1200px) {
   /* Footer Media 1200 */
@@ -375,6 +447,10 @@ body {
   .biographyContainer div:nth-child(4) {
     animation: bioAppear 1s both;
     animation-delay: 1s;
+  }
+  .biographyContainer{
+    grid-template-columns: 600px;
+
   }
   /* Biography Media 1200 */
 
@@ -457,6 +533,7 @@ body {
   /* Biography Media 768 */
   .biographyContainer {
     margin-bottom: 5em;
+    grid-template-columns: 300px;
   }
   /* Biography Media 768 */
 
