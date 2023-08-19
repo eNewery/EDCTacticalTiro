@@ -6,6 +6,8 @@ const MiContexto = createContext();
 const MiContextoProvider = ({ children }) => {
   const [course, setCourse] = useState([])
     const [clickedLink, setClickedLink] = useState("home");
+    const [isCreate, setIsCreate] = useState(true)
+    const [isEdit, setIsEdit] = useState(false)
     useEffect(() => {
       const biography = document.querySelector(".biography");
       const courses = document.querySelector(".courses");
@@ -48,37 +50,48 @@ const MiContextoProvider = ({ children }) => {
         shop.classList.remove("borderLinkActive");
       }
       // Función para obtener datos de una colección
-      async function fetchCollectionData(collectionName) {
-        try {
-          const querySnapshot = await getDocs(collection(db, collectionName));
-          const data = [];
-          
-          querySnapshot.forEach(doc => {
-            data.push({
-              id: doc.id,
-              ...doc.data()
-            });
-          });
-          
-          return data;
-        } catch (error) {
-          console.error('Error fetching collection data:', error);
-          return [];
-        }
-      }
+
       
-      const collectionName = 'courses';
-      fetchCollectionData(collectionName)
-        .then(data => {
-          setCourse(data)
-        });
       
-  
-  
+      
+      
       
     }, [clickedLink]);
+    
+  
+      useEffect(() => {
+        async function fetchCollectionData(collectionName) {
+          try {
+            const querySnapshot = await getDocs(collection(db, collectionName));
+            const data = [];
+            
+            querySnapshot.forEach(doc => {
+              data.push({
+                id: doc.id,
+                ...doc.data()
+              });
+            });
+            
+            return data;
+          } catch (error) {
+            console.error('Error fetching collection data:', error);
+            return [];
+          }
+        }
+        const collectionName = 'courses';
+        fetchCollectionData(collectionName)
+          .then(data => {
+            setCourse(data)
+          });    
+      }, [course])
+      
+function deleteCourse() {
+  console.log("Hola")
+}
+
+
     return (
-      <MiContexto.Provider value={{setClickedLink, course}}>
+      <MiContexto.Provider value={{setClickedLink, course, isCreate, setIsCreate, deleteCourse, isEdit, setIsEdit}}>
         {children}
       </MiContexto.Provider>
     );

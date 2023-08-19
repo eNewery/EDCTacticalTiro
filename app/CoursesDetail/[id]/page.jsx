@@ -14,7 +14,7 @@ const CoursesDetail = ({params}) => {
         <p className="course-detail-text">{item.text}</p>
       </div>
       <div className="course-detail-hours">
-      <a className='course-detail-whatsapp' target='_blank' href="https://wa.link/0daqyb">
+      <a className='course-detail-whatsapp' target='_blank' href={`https://api.whatsapp.com/send?phone=5492234564340&text=Quería hacerte una consulta sobre el curso: ${item.title}`}>
             <div className="whatsapp"></div>
             </a>
         <span className="course-detail-hours-text">{item.hours} horas</span>

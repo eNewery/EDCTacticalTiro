@@ -16,6 +16,7 @@ Para la Escuela EDC Tatical MDQ es primordial la seguridad y la integridad en la
 El desarrollo de las mismas se brinda con material teórico, videos, imágenes y material de practica como cuadernillo, armas inertes, material de seguridad, etc
         </p>
       </div>
+        <div className="learnShotBtnContainer"><h2 className='learnShotBtn'>¿Quieres aprender a disparar?</h2></div>
       <div className="experience">
         <h2>Nuestro Objetivo</h2>
         <p>

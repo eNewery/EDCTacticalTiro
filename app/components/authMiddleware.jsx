@@ -7,7 +7,6 @@ export const authMiddleware = (WrappedComponent) => {
     const router = useRouter();
     const auth = getAuth();
 
-    // Verificar la autenticación del usuario
     onAuthStateChanged(auth, (user) => {
       if (!user) {
         router.push('/LoginPage');
