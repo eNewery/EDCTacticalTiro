@@ -5,6 +5,8 @@ import { collection, getDocs } from 'firebase/firestore'; // Importa collection 
 const MiContexto = createContext();
 const MiContextoProvider = ({ children }) => {
   const [course, setCourse] = useState([])
+  const [products, setProducts] = useState([])
+
     const [clickedLink, setClickedLink] = useState("home");
     const [isCreate, setIsCreate] = useState(true)
     const [isEdit, setIsEdit] = useState(false)
@@ -83,15 +85,38 @@ const MiContextoProvider = ({ children }) => {
           .then(data => {
             setCourse(data)
           });    
-      }, [course])
+      }, [])
+      useEffect(() => {
+        async function fetchCollectionData(collectionName) {
+          try {
+            const querySnapshot = await getDocs(collection(db, collectionName));
+            const data = [];
+            querySnapshot.forEach(doc => {
+              data.push({
+                id: doc.id,
+                ...doc.data()
+              });
+            });
+            
+            return data;
+          } catch (error) {
+            console.error('Error fetching collection data:', error);
+            return [];
+          }
+        }
+  fetchCollectionData("courses").then(data => {
+    setCourse(data)
+  }); 
+  fetchCollectionData("products").then(data => {
+    setProducts(data)
+  }); 
+      }, [])
       
-function deleteCourse() {
-  console.log("Hola")
-}
+
 
 
     return (
-      <MiContexto.Provider value={{setClickedLink, course, isCreate, setIsCreate, deleteCourse, isEdit, setIsEdit}}>
+      <MiContexto.Provider value={{setClickedLink, course, isCreate, setIsCreate, isEdit, setIsEdit, products, setProducts}}>
         {children}
       </MiContexto.Provider>
     );

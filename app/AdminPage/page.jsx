@@ -2,6 +2,13 @@
 import { authMiddleware } from '../components/authMiddleware';
 import Link from 'next/link';
 const ProtectedPage = () => {
+  setTimeout(() => {
+    const adminPageTitle = document.querySelector(".adminPageTitle")
+    if (adminPageTitle) {
+      adminPageTitle.textContent = "EDC Tactical"
+      adminPageTitle.classList.add("adminPageTitleAf")
+    }
+  }, 2000);
   return (
     <div className='adminPageContainer'>
       <h2 className='adminPageTitle'>Acá vas a poder administrar todos los cursos y productos de la tienda.</h2>

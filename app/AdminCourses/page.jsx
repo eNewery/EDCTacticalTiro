@@ -30,6 +30,7 @@ const context = useContext(MiContexto)
     
   return (
     <div className='adminPageCourses'>
+      
       {context.isCreate === true ? <div className="adminCoursesList">
 <button className="adminPageCoursesCreateBtn" onClick={() => context.setIsCreate(false)}>Añadir Curso</button>
     <h2 className='adminCoursesListTitle'>Lista de Cursos Disponibles</h2>
