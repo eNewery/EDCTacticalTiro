@@ -54,6 +54,7 @@
 html,
 body {
   animation: start 2s both;
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(25,44,25,1) 90%);
 }
 /* Html, Body */
 
@@ -157,6 +158,9 @@ gap: 2em;
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Agregamos un sombreado al texto */
+  border-bottom: 3px solid white;
+  border-bottom-right-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 .bio,
@@ -193,10 +197,10 @@ cursor: pointer;
 display: flex;
 justify-content: center;
 align-items: center;
+text-decoration: none;
 }
 .learnShotBtn:active{
 border-bottom: 3px solid white;
-
   transition: 0.4s;
   transform: translateY(-0.3em) scale(1.1);
 }
@@ -239,6 +243,54 @@ transition:0.3s;
 }
 /* Biography Container */
 
+
+/* Contact Container */
+.contactContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  .formContainer{
+  display: flex;
+  flex-direction: column;
+  }
+  .inputContactForm{
+    padding: 1em;
+    margin-bottom: 6px;
+    border-bottom-left-radius:0.5em;
+    border-bottom-right-radius:0.5em;
+    background-color:#151515;
+    border: 2px solid #151515;
+    border-bottom: 2px solid white;
+    color: #d9d9d9;
+    outline: none;
+    transition: 0.3s;
+  }
+  .inputContactForm:focus{
+    border: 2px solid white;
+    transition: 0.3s;
+  }
+  .btnContactForm{
+  height: 40px;
+  font-size: 24px;
+  background-color: #151515;
+  color: #d9d9d9;
+  border: none;
+  box-shadow:inset 0 -2px 0 0 white;
+  border-bottom-left-radius:0.5em;
+  border-bottom-right-radius:0.5em;
+  transition: 0.3s;
+  cursor: pointer;
+  }
+  .btnContactForm:hover{
+  box-shadow: inset 0 -40px 0 0 white;
+    transition: 0.3s;
+    color: #151515;
+  }
+  /* Contact Container */
+  
+
 /* Courses Container */
 .coursesContainer {
   display: flex;
@@ -260,6 +312,27 @@ transition:0.3s;
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+  border-bottom-left-radius: 0.4em;
+  border-bottom-right-radius: 0.4em;
+  border-bottom: 2px solid white;
+}
+.coursesTitleLarge{
+
+    text-align: center;
+    color: white;
+    font-size: 36px; 
+    margin-bottom: 1em;
+    background-color: #151515;
+    width: 500px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    border-bottom-left-radius: 0.4em;
+    border-bottom-right-radius: 0.4em;
+    border-bottom: 2px solid white;
+
 }
 .course {
   padding: 1em;
@@ -332,6 +405,9 @@ transition:0.3s;
 
 /* Courses Container */
 
+
+
+
 /* Home Container */
 .homeContainer {
   display: flex;
@@ -387,6 +463,7 @@ transition:0.3s;
   background-color: #151515;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid white;
 }
 
 .coming-soon-title {
@@ -408,7 +485,24 @@ transition:0.3s;
 }
 .adminPageTitle{
 color: white;
-margin-bottom: 1em;
+text-align: center;
+opacity: 0;
+animation: adminTitle 4s both;
+font-size: 32px;
+padding: 0.3em;
+border-bottom: 2px solid rgb(255, 255, 255);
+}
+.adminPageTitleAf{
+  background-color: #151515;
+  border-bottom: 2px solid white;
+  border-bottom-left-radius:0.3em;
+  border-bottom-right-radius:0.3em;
+}
+@keyframes adminTitle {
+  0%{opacity: 0;}
+  33%{opacity: 1;}
+  57%{opacity: 0;}
+  100%{opacity: 1; transform: translateY(-3em);}
 }
 .adminPageList{
   display: flex;
@@ -418,15 +512,19 @@ margin-bottom: 1em;
   align-items: center;
 }
 .adminLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 32px;
   text-decoration: none;
   color: white;
   background-color: #151515;
-  width: 100%;
-  height: 50px;
+  width: 500px;
+  height: 70px;
   border-radius: 1em;
 text-align: center;
 transition: 0.4s;
+border-bottom: 2px solid white;
 }
 .adminLink:active{
   box-shadow: inset 0em -2em 5em 1em white;
@@ -447,7 +545,15 @@ transition: 0.4s;
   flex-direction: column;
   margin-bottom: 5em;
   margin-top: 1em;
-
+}
+.visibilityBtn{
+padding-left: 0.3em;
+font-weight: 800 !important;
+transition: 0.2s;
+}
+.visibilityBtn:hover{
+  transition: 0.2s;
+color: rgb(45, 178, 183);
 }
 .adminPageCoursesCreateBtn{
   background-color: #151515;
@@ -486,9 +592,20 @@ margin-bottom: 1em;
 .courseFormTitle{
 background-color: #151515;
 color: #d9d9d9;
-padding: 0.3em;
-border-radius: 0.2em;
+padding: 0.6em;
+border-bottom: 2px solid white;
+border-bottom-left-radius:0.5em;
+border-bottom-right-radius:0.5em;
+gap: 1em;
 margin-bottom: 0.3em;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.courseFormTitle span{
+  font-weight: 800 !important;
+  font-size: 32px;
+  cursor: pointer;
 }
 .courseFormInput{
 margin-bottom: 1em;
@@ -533,6 +650,12 @@ position: relative;
 z-index: 10;
 border-left: 1px solid #d9d9d9;
 padding-right: 0.5em;
+transition: 0.2s;
+
+}
+.courseDelete:hover{
+  color: red;
+  transition: 0.2s;
 }
 .courseAdmin{
 flex-direction: row;
@@ -549,6 +672,9 @@ height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.courseLink:active{
+  color: #151515;
 }
 /* Admin Page */
 
@@ -716,6 +842,15 @@ height: 70px;
     grid-template-columns: 400px;
   }
   /* Biography Media 768 */
+
+/* Contact Container 768 */
+
+.contactContainer{
+  margin-bottom: 6em;
+}
+
+/* Contact Container 768 */
+
 
   /* Courses Media 768 */
   .coursesContainer {

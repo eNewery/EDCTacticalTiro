@@ -1,10 +1,12 @@
 "use client"
 import React, { createContext, useState, useEffect } from 'react';
 import { db } from '../firebase'; // Ajusta la ruta de importación según tu estructura de carpetas
-import { collection, getDocs } from 'firebase/firestore'; // Importa collection y getDocs para hacer el fetch
+import { collection, getDocs, onSnapshot } from 'firebase/firestore'; // Importa collection y getDocs para hacer el fetch
 const MiContexto = createContext();
 const MiContextoProvider = ({ children }) => {
   const [course, setCourse] = useState([])
+  const [products, setProducts] = useState([])
+
     const [clickedLink, setClickedLink] = useState("home");
     const [isCreate, setIsCreate] = useState(true)
     const [isEdit, setIsEdit] = useState(false)
@@ -51,20 +53,31 @@ const MiContextoProvider = ({ children }) => {
       }
       // Función para obtener datos de una colección
 
-      
-      
-      
-      
-      
     }, [clickedLink]);
     
   
+    useEffect(() => {
+      const unsubscribe = onSnapshot(collection(db, 'courses'), (snapshot) => {
+        const data = [];
+        snapshot.forEach((doc) => {
+          data.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        setCourse(data);
+      });
+  
+      return () => {
+        // Cleanup: Detach the listener when the component unmounts
+        unsubscribe();
+      };
+    }, []);
       useEffect(() => {
         async function fetchCollectionData(collectionName) {
           try {
             const querySnapshot = await getDocs(collection(db, collectionName));
             const data = [];
-            
             querySnapshot.forEach(doc => {
               data.push({
                 id: doc.id,
@@ -78,20 +91,17 @@ const MiContextoProvider = ({ children }) => {
             return [];
           }
         }
-        const collectionName = 'courses';
-        fetchCollectionData(collectionName)
-          .then(data => {
-            setCourse(data)
-          });    
-      }, [course])
+
+  fetchCollectionData("products").then(data => {
+    setProducts(data)
+  }); 
+      }, [])
       
-function deleteCourse() {
-  console.log("Hola")
-}
+
 
 
     return (
-      <MiContexto.Provider value={{setClickedLink, course, isCreate, setIsCreate, deleteCourse, isEdit, setIsEdit}}>
+      <MiContexto.Provider value={{setClickedLink, course, isCreate, setIsCreate, isEdit, setIsEdit, products, setProducts}}>
         {children}
       </MiContexto.Provider>
     );
