@@ -1,7 +1,7 @@
 "use client"
 import React, { createContext, useState, useEffect } from 'react';
 import { db } from '../firebase'; // Ajusta la ruta de importación según tu estructura de carpetas
-import { collection, getDocs } from 'firebase/firestore'; // Importa collection y getDocs para hacer el fetch
+import { collection, getDocs, onSnapshot } from 'firebase/firestore'; // Importa collection y getDocs para hacer el fetch
 const MiContexto = createContext();
 const MiContextoProvider = ({ children }) => {
   const [course, setCourse] = useState([])
@@ -61,31 +61,23 @@ const MiContextoProvider = ({ children }) => {
     }, [clickedLink]);
     
   
-      useEffect(() => {
-        async function fetchCollectionData(collectionName) {
-          try {
-            const querySnapshot = await getDocs(collection(db, collectionName));
-            const data = [];
-            
-            querySnapshot.forEach(doc => {
-              data.push({
-                id: doc.id,
-                ...doc.data()
-              });
-            });
-            
-            return data;
-          } catch (error) {
-            console.error('Error fetching collection data:', error);
-            return [];
-          }
-        }
-        const collectionName = 'courses';
-        fetchCollectionData(collectionName)
-          .then(data => {
-            setCourse(data)
-          });    
-      }, [])
+    useEffect(() => {
+      const unsubscribe = onSnapshot(collection(db, 'courses'), (snapshot) => {
+        const data = [];
+        snapshot.forEach((doc) => {
+          data.push({
+            id: doc.id,
+            ...doc.data(),
+          });
+        });
+        setCourse(data);
+      });
+  
+      return () => {
+        // Cleanup: Detach the listener when the component unmounts
+        unsubscribe();
+      };
+    }, []);
       useEffect(() => {
         async function fetchCollectionData(collectionName) {
           try {
@@ -104,9 +96,7 @@ const MiContextoProvider = ({ children }) => {
             return [];
           }
         }
-  fetchCollectionData("courses").then(data => {
-    setCourse(data)
-  }); 
+
   fetchCollectionData("products").then(data => {
     setProducts(data)
   }); 

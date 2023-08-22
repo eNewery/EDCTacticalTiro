@@ -3,6 +3,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from 'firebase/auth';
+import firebase from 'firebase/app'
 // TODO: Add SDKs for Firebase products that you want to use
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -14,19 +15,19 @@ import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyBnF3F5XDeTKyVvo7DsZQTDxhdsXXQXNVU",
+  apiKey: "AIzaSyABdYs-seooVFzrM3pYDanRZgMfRin4zaA",
 
-  authDomain: "edctactical-ee5a4.firebaseapp.com",
+  authDomain: "edctactical-f8369.firebaseapp.com",
 
-  projectId: "edctactical-ee5a4",
+  projectId: "edctactical-f8369",
 
-  storageBucket: "edctactical-ee5a4.appspot.com",
+  storageBucket: "edctactical-f8369.appspot.com",
 
-  messagingSenderId: "225704432450",
+  messagingSenderId: "925545248288",
 
-  appId: "1:225704432450:web:114cd1f0c5b2d9538c2edb",
+  appId: "1:925545248288:web:f96d23a762d5a9ecee6e45",
 
-  measurementId: "G-VT0Z61HWQH"
+  measurementId: "G-ZXSYEH386Z"
 
 };
 
@@ -39,4 +40,4 @@ const db = getFirestore(app);
 const auth = getAuth(app);
 
 
-export { db, auth };
+export { db, auth, firebase };

@@ -261,10 +261,15 @@ transition:0.3s;
     border-bottom-left-radius:0.5em;
     border-bottom-right-radius:0.5em;
     background-color:#151515;
-    border: none;
-    border-bottom: 1px solid white;
+    border: 2px solid #151515;
+    border-bottom: 2px solid white;
     color: #d9d9d9;
     outline: none;
+    transition: 0.3s;
+  }
+  .inputContactForm:focus{
+    border: 2px solid white;
+    transition: 0.3s;
   }
   .btnContactForm{
   height: 40px;
@@ -540,7 +545,15 @@ border-bottom: 2px solid white;
   flex-direction: column;
   margin-bottom: 5em;
   margin-top: 1em;
-
+}
+.visibilityBtn{
+padding-left: 0.3em;
+font-weight: 800 !important;
+transition: 0.2s;
+}
+.visibilityBtn:hover{
+  transition: 0.2s;
+color: rgb(45, 178, 183);
 }
 .adminPageCoursesCreateBtn{
   background-color: #151515;
@@ -579,9 +592,20 @@ margin-bottom: 1em;
 .courseFormTitle{
 background-color: #151515;
 color: #d9d9d9;
-padding: 0.3em;
-border-radius: 0.2em;
+padding: 0.6em;
+border-bottom: 2px solid white;
+border-bottom-left-radius:0.5em;
+border-bottom-right-radius:0.5em;
+gap: 1em;
 margin-bottom: 0.3em;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.courseFormTitle span{
+  font-weight: 800 !important;
+  font-size: 32px;
+  cursor: pointer;
 }
 .courseFormInput{
 margin-bottom: 1em;
@@ -626,6 +650,12 @@ position: relative;
 z-index: 10;
 border-left: 1px solid #d9d9d9;
 padding-right: 0.5em;
+transition: 0.2s;
+
+}
+.courseDelete:hover{
+  color: red;
+  transition: 0.2s;
 }
 .courseAdmin{
 flex-direction: row;
@@ -642,6 +672,9 @@ height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.courseLink:active{
+  color: #151515;
 }
 /* Admin Page */
 
@@ -809,6 +842,15 @@ height: 70px;
     grid-template-columns: 400px;
   }
   /* Biography Media 768 */
+
+/* Contact Container 768 */
+
+.contactContainer{
+  margin-bottom: 6em;
+}
+
+/* Contact Container 768 */
+
 
   /* Courses Media 768 */
   .coursesContainer {
