@@ -1,6 +1,6 @@
 "use client"
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export const authMiddleware = (WrappedComponent) => {
   const AuthenticatedRoute = (props) => {
