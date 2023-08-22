@@ -1,21 +1,18 @@
 "use client";
-import { useContext, useState, useEffect } from "react";
+import "firebase/firestore";
+import { useContext, useState } from "react";
 import { authMiddleware } from "../components/authMiddleware";
 import { MiContexto } from "../components/context";
 import {
-  collection,
-  getDocs,
   updateDoc,
   setDoc,
   doc,
-  query,
   deleteDoc,
 } from "firebase/firestore"; // Importa collection y getDocs para hacer el fetch
 import Link from "next/link";
-import firebase from "firebase/app";
-import "firebase/firestore";
-
 import { db } from "../firebase";
+
+
 const ProtectedPage = () => {
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
@@ -125,4 +122,4 @@ arrow_back
   );
 };
 
-export default authMiddleware(ProtectedPage);
+export default ProtectedPage;

@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import { authMiddleware } from '../components/authMiddleware';
 import { MiContexto } from '../components/context';
 import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 const ProtectedPage = () => {
   const context = useContext(MiContexto)
@@ -68,4 +68,4 @@ const ProtectedPage = () => {
   );
 };
 
-export default authMiddleware(ProtectedPage);
+export default ProtectedPage;

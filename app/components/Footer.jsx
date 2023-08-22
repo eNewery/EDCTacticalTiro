@@ -1,7 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import Head from "next/head";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { MiContexto } from "./context";

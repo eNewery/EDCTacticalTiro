@@ -1,10 +1,9 @@
 "use client"
-import { authMiddleware } from '../components/authMiddleware';
 import Link from 'next/link';
 const ProtectedPage = () => {
   setTimeout(() => {
+    if (document) {
     const adminPageTitle = document.querySelector(".adminPageTitle")
-    if (adminPageTitle) {
       adminPageTitle.textContent = "EDC Tactical"
       adminPageTitle.classList.add("adminPageTitleAf")
     }
@@ -20,4 +19,4 @@ const ProtectedPage = () => {
   );
 };
 
-export default authMiddleware(ProtectedPage);
+export default ProtectedPage;

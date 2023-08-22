@@ -1,5 +1,5 @@
 "use client"
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 
 import Link from 'next/link';
 import { MiContexto } from '../components/context';
