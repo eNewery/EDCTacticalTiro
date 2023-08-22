@@ -53,11 +53,6 @@ const MiContextoProvider = ({ children }) => {
       }
       // Función para obtener datos de una colección
 
-      
-      
-      
-      
-      
     }, [clickedLink]);
     
   

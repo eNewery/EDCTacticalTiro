@@ -21,13 +21,10 @@ const ProtectedPage = () => {
 
       const storage = getStorage();
       const storageRef = ref(storage, `images/${image.name}`);
-      
       await uploadBytes(storageRef, image);
-      
       const url = await getDownloadURL(storageRef);
       setImageUrl(url);
-      const productsCollection = collection(db, 'products');
-    
+      const productsCollection = collection(db, 'products')
      const productData = {
        name: productName,
        description: productDescription,
@@ -40,7 +37,6 @@ const ProtectedPage = () => {
      } catch (error) {
        console.error('Error al agregar el producto:', error);
      }
-
   context.setIsCreate(true)
   };
   
