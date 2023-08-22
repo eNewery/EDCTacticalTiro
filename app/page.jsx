@@ -4,7 +4,7 @@ import styles from './page.module.css'
 import Link from 'next/link'
 import { useContext, useState } from 'react'
 import { MiContexto } from './components/context'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 export default function Home() {
   const context = useContext(MiContexto)
 const [count, setCount] = useState(0)
